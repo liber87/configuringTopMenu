@@ -466,7 +466,7 @@ if ($modx->Event->name=='OnManagerMenuPrerender')
 				if (in_array($_SESSION['roles'],$mids)) $nkid = $key;
 			}
 		}		
-		$modx->Event->output(serialize($mmenu[$nkid]['items']));
+		if ($nkid) $modx->Event->output(serialize($mmenu[$nkid]['items']));
 	}
 }
 if ($modx->Event->name=='OnManagerTopPrerender')
