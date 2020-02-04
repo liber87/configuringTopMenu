@@ -471,9 +471,12 @@ if ($modx->Event->name=='OnManagerMenuPrerender')
 }
 if ($modx->Event->name=='OnManagerTopPrerender')
 {
-	$out = 'document.addEventListener(\'DOMContentLoaded\', function(){	
-	$(\'#system ul\').prepend(\'<li><a href="./../configuringTopMenu" target="main"><i class="fa fa-cog"></i> Настройка верхнего меню</a></li>\')});
-	</script>';	
-	$modx->Event->output($out);
-}																
+	?>
+	<script>
+	document.addEventListener('DOMContentLoaded', function(){	
+	$('#system ul').prepend('<li><a href="./../configuringTopMenu" target="main"><i class="fa fa-cog"></i> Настройка верхнего меню</a></li>')
+	});
+	</script>
+	<?	
+}															
 ?>
